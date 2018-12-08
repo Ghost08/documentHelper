@@ -13,9 +13,9 @@
     </ul>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
+        <a class="nav-link" *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active">Login</a>
 
-        <a class="nav-link" *ngIf="_authService.loggedIn()" style="cursor: pointer;" (click)="_authService.logoutUser()">Logout</a>
+        <a class="nav-link" *ngIf="isLoggedIn" style="cursor: pointer;" (click)="logoutUser()">Logout</a>
       </li>
     </ul>
   </div>

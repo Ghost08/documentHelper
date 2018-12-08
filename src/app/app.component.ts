@@ -7,7 +7,13 @@ import {AuthService} from './auth.service'
 })
 export class AppComponent {
   title = 'TemplateHelperApp';
+  isLoggedIn: any;
 
+  constructor(private _authService : AuthService){
+    this.isLoggedIn = this._authService.loggedIn;
+  }
 
-  constructor(private _authService : AuthService){}
+  logoutUser(){
+    this._authService.logoutUser();
+  }
 }
