@@ -21,31 +21,31 @@
             <form>
               <div class="form-row">
                 <div class="form-group col-md-3">
-                  <label for="txtPetitionNo">Petition No</label>
+                  <label for="txtPetitionNo">Petition No <span class="text-danger">*</span> </label>
                   <input type="text" class="form-control" [(ngModel)]="petitionData.Petition_No" name="txtPetitionNo"
                     placeholder="Petition No">
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="txtPetitionYear">Petition Year</label>
+                  <label for="txtPetitionYear">Petition Year <span class="text-danger">*</span></label>
                   <input type="txtPetitionYear" class="form-control" [(ngModel)]="petitionData.Petition_Year" name="txtPetitionYear"
                     placeholder="Petition Year">
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="txtPetitionType">Petition Type</label>
+                  <label for="txtPetitionType">Petition Type <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" [(ngModel)]="petitionData.Petition_Type" name="txtPetitionType"
                     placeholder="Petition Type">
                 </div>
 
                 <div class="-group col-md-3">
-                  <label for="txtPetitioneDate">Date Of Petition</label>
-                  <input type="text" class="form-control" [(ngModel)]="petitionData.Date_Of_Petition" name="txtPetitioneDate">
+                  <label for="txtPetitioneDate">Date Of Petition <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" [(ngModel)]="petitionData.Date_Of_Petition" name="txtPetitioneDate" placeholder="YYYY/MM/DD">
                 </div>
 
 
               </div>
 
               <div class="form-group ">
-                <label for="txtPetitionerName">Name</label>
+                <label for="txtPetitionerName">Name <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" [(ngModel)]="petitionerData.Petitioner_Name" name="txtPetitionerName"
                   placeholder="Petitioner Full Name">
               </div>
@@ -96,7 +96,7 @@
             <form>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="txtDeceasedName">Name</label>
+                  <label for="txtDeceasedName">Name <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" [(ngModel)]="deceasedData.Deceased_Name" name="txtDeceasedName"
                     placeholder="Deceased Full Name">
                 </div>
@@ -113,8 +113,8 @@
               </div>
               <div class="form-row">
                 <div class="form-group col-md-3">
-                  <label for="txtDeceasedDate">Date Of Death</label>
-                  <input type="text" class="form-control" [(ngModel)]="deceasedData.Date_Of_Death" name="txtDeceasedDate">
+                  <label for="txtDeceasedDate">Date Of Death <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" [(ngModel)]="deceasedData.Date_Of_Death" name="txtDeceasedDate" placeholder="YYYY/MM/DD">
                 </div>
 
 
