@@ -10,7 +10,12 @@ export class AppComponent {
   isLoggedIn: any;
 
   constructor(private _authService : AuthService){
-    this.isLoggedIn = this._authService.loggedIn;
+    
+  }
+
+  checkLoggedIn(){
+    
+    return this._authService.loggedIn();
   }
 
   logoutUser(){

@@ -9,12 +9,16 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { DataService } from './data.service';
+import { PetitionComponent } from './petition/petition.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    PetitionComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

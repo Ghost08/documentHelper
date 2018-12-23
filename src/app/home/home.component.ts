@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { environment } from '../../environments/environment';
-
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,15 +9,31 @@ import { environment } from '../../environments/environment';
 })
 export class HomeComponent implements OnInit {
 
-  petitionData: Petition = new Petition();
-  constructor(private _dataService: DataService) { }
+  petitionData: any = [];
+
+  constructor(private _dataService: DataService, private _router: Router) { }
 
   ngOnInit() {
+    this._dataService.fetchAllPetitionData().subscribe(res => {
+      let response = res;
+      console.log(response);
+      if (response["status"] === "success") {
+        this.petitionData = response["data"];
+
+      }
+    }, err => {
+      console.log(err);
+    });
   }
 
-  submitData() {
-    if (this.petitionData) {
-      this._dataService.getFormattedDocument(this.petitionData).subscribe(res => {
+  editPetition(Petition_No: string) {
+
+    this._router.navigate(["petition", Petition_No]);
+  }
+
+  downloadFile(Petition_No: string) {
+    if (Petition_No) {
+      this._dataService.getFormattedDocument(Petition_No).subscribe(res => {
         let response = res;
         console.log(response);
         if (response["status"] === "success") {
@@ -29,33 +45,9 @@ export class HomeComponent implements OnInit {
       })
     }
   }
+
 }
 
-export class Petition {
 
-  constructor() { };
-  Petition_No: String;
-  Petition_Year: String;
-  Date_Of_Petition: String;
-  Petitioner_Name: String;
-  Petitioner_Place: String;
-  Petitioner_Address: String;
-  Petitioner_Nationality: String;
-  Petitioner_Caste: String;
-  Petitioner_Occupation: String;
-  Petitioner_Age: String;
-  Petitioner_Relation: String;
-  Deceased_Name: String;
-  Deceased_Alias: String;
-  Deceased_Place: String;
-  Deceased_Address: String;
-  Deceased_Nationality: String;
-  Deceased_Caste: String;
-  Deceased_Occupation: String;
-  Deceased_Age: String;
-  Date_Of_Death: String;
-  Property_Location: String;
-  Property_Address: String;
-  Property_State: String;
-}
+
 
